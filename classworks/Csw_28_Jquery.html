@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question 5</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"
+      integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+      p {
+        cursor: pointer;
+        font: 800 2rem Consolas;
+      }
+      img {
+        margin-top: 2rem;
+        display: block;
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div>
+        Qns : Create an HTML page which uses the following methods, (i)
+        slideDown(), (ii) animate(), (iii) fadeIn(), (iv) hide(), (v) show(),
+        (vi) mouseenter(), (vii) dblclick(), (viii) mouseleave(), (ix) attr(),
+        and (x) html().
+      </div>
+      <p>Sample Paragraph</p>
+      <button class="btn-slide-up">Slide Up</button>
+      <button class="btn-slide-down">Slide Down</button>
+      <button class="animate">Animate</button>
+      <button class="reset">Reset</button>
+      <button class="fade-out">Fade Out</button>
+      <button class="fade-in">Fade In</button>
+      <button class="hide">Hide</button>
+      <button class="show">Show</button>
+      <button class="attr">Attr</button>
+      <button class="html">HTML</button>
+      <img src="#" alt="sample Image" width="300" height="200" />
+    </div>
+
+    <script>
+      $(function () {
+        $("p").mouseenter(function () {
+          $(this).text("Sample Paragraph - Mouse Entered");
+        });
+        $("p").mouseleave(function () {
+          $(this).text("Sample Paragraph - Mouse Left");
+        });
+        $("p").dblclick(() => {
+          alert("Element Double Clicked");
+        });
+
+        $(".btn-slide-up").click(() => {
+          $("p").slideUp();
+        });
+        $(".btn-slide-down").click(() => {
+          $("p").slideDown();
+        });
+        $(".animate").click(() => {
+          $("p").animate({ fontSize: "3rem" });
+        });
+        $(".reset").click(() => {
+          $("p").animate({ fontSize: "2rem" });
+        });
+        $(".fade-out").click(() => {
+          $("p").fadeOut();
+        });
+        $(".fade-in").click(() => {
+          $("p").fadeIn();
+        });
+        $(".hide").click(() => {
+          $("p").hide();
+        });
+        $(".show").click(() => {
+          $("p").show();
+        });
+        $(".attr").click(() => {
+          console.log("Hello");
+          $("img").attr("height", "300");
+        });
+        $(".html").click(() => {
+          $("p").html("<h4>HTML CHANGED</h4>");
+        });
+      });
+    </script>
+  </body>
+</html>
